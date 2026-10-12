@@ -4,6 +4,8 @@ A calm Eisenhower matrix for your laptop and iPhone.
 
 **App:** https://rishabmohandoss.github.io/eisenhower-matrix/
 
+**Project handoff:** https://rishabmohandoss.github.io/eisenhower-matrix/handoff.md
+
 ## Use it
 
 Create an account using your email and a password, then sign in with that same account on both devices. Tasks sync automatically through Firebase Authentication and Firestore. In Safari on iPhone, choose **Share → Add to Home Screen**.
