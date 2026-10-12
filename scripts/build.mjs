@@ -1,0 +1,10 @@
+import {execFileSync} from 'node:child_process';
+import {readdirSync,writeFileSync} from 'node:fs';
+execFileSync(process.execPath,['node_modules/vite/bin/vite.js','build','--base=./'],{stdio:'inherit'});
+const files=['./','./index.html','./icon.svg','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./manifest.webmanifest',...readdirSync('dist/assets').map(f=>'./assets/'+f)];
+const version='clarity-'+Date.now();
+writeFileSync('dist/sw.js',`const CACHE=${JSON.stringify(version)};const FILES=${JSON.stringify(files)};
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('clarity-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;event.respondWith(event.request.mode==='navigate'?fetch(event.request).catch(()=>caches.match('./index.html')):caches.match(event.request).then(c=>c||fetch(event.request)));});`);
+writeFileSync('dist/.nojekyll','');
