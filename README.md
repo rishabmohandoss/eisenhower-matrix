@@ -51,4 +51,4 @@ The design uses readable system-compatible typography, touch controls, explicit 
 
 ## Validation
 
-`node tests/ui.mjs` exercises task creation, editing, moving, completion, undo, guest persistence, search, themes, and mobile layout in Chromium and iPhone-sized WebKit. Run a local Vite server on port 5179 first, or set `APP_URL`.
+`node tests/ui.mjs` exercises task creation, editing, moving, completion, undo, guest persistence, search, themes, and mobile layout in Chromium and iPhone-sized WebKit. `APP_URL=https://rishabmohandoss.github.io/eisenhower-matrix/ node tests/sync.mjs` verifies email sign-in, desktop-to-iPhone sync, offline reconciliation, and per-account isolation with disposable test accounts. Both checks clean up after themselves.
