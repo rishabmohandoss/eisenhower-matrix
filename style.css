@@ -6,3 +6,9 @@
 :root{--muted:#606d65}.account{width:44px;height:44px;min-height:44px}.segments button,.mobile-filters button{min-height:44px}.search input{min-height:44px}.task-more{width:44px;min-width:44px}.task-title{font-size:14px}.q-sub{font-size:12px}
 @media(max-width:600px){.task-title{font-size:15px}.sync{max-width:95px;line-height:1.4}.top-actions{gap:0}.brand{gap:6px}.brand img{width:33px;height:33px}}
 @media(max-width:360px){.toolbar{flex-wrap:wrap}.toolbar .segments{width:100%}.search{width:100%}.search input{width:100%}.intro h1{font-size:26px}.topbar .sync{max-width:74px;font-size:9px}.shell{padding-left:16px;padding-right:16px}}
+/* A brighter, sunlit palette with saturated quadrant accents. */
+:root{--bg:#f3faf6;--accent:#2d8151;--hover:#e8f2eb;--do:#b84b37;--do-bg:#fff0e9;--plan:#28764b;--plan-bg:#e8f7ed;--delegate:#91600c;--delegate-bg:#fff4d7;--later:#496ba9;--later-bg:#eaf2ff}
+body{background:radial-gradient(ellipse at 8% 8%,#fff0df 0,transparent 34%),radial-gradient(ellipse at 94% 25%,#e8f4ff 0,transparent 35%),var(--bg);min-height:100vh}
+.primary{box-shadow:0 3px 0 #1f603b}.primary:hover{background:#246d43}
+.progress-track i{background:#58ad72}
+body[data-theme=dark]{--bg:#171d1b;--surface:#242c28;--ink:#e3ebe5;--line:#354039;--muted:#a0afa6;--hover:#303d34;--accent:#428260;--do:#eea28d;--do-bg:#2d2420;--plan:#8fc9a3;--plan-bg:#202c24;--delegate:#e2bf7b;--delegate-bg:#2d291e;--later:#a5bde9;--later-bg:#222935;background:var(--bg)}
